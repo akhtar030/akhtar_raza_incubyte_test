@@ -3,4 +3,4 @@
 <input type="text" placeholder="enter the string.." [(ngModel)]="userInput">
 <button class="btn-cal" (click)="addValues(userInput)">Calculate</button>
 
-<h2>{{ouput}}</h2>
+<h2 *ngIf="output">Result - {{output}}</h2>

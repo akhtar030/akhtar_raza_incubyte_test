@@ -15,7 +15,7 @@ export class AppComponent implements OnInit{
 
   title = 'Akhtar Raza Incubyte Test';
   userInput:string = '';
-  ouput:any;
+  output:any;
 
   constructor(){ }
 
@@ -24,13 +24,13 @@ export class AppComponent implements OnInit{
 
   addValues(inputValue: string){
     if(inputValue != ''){
-      let result = inputValue.replace(/[^0-9]/g, '');
+      let result = inputValue.replace(/[^0-9]/g, ''); //^-?\d*\.?\d+$
       let outputResult = String(result).split("").map((result) =>{
         return Number(result);
       })
-      console.log(outputResult);
 
       let sumOf = outputResult.reduce((el,sum) => el + sum);
+      this.output = sumOf;
       console.log(sumOf);
       
     }
